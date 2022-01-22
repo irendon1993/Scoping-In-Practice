@@ -103,51 +103,67 @@
 
 // const f = jonas.calcAge;
 // f();
-var firstName = 'Matilda';
+// var firstName = 'Matilda';
 
-const isaac = {
-  firstName: 'Isaac',
-  year: 1993,
-  calcAge: function () {
-    // console.log(this);
-    console.log(2037 - this.year);
+// const isaac = {
+//   firstName: 'Isaac',
+//   year: 1993,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2037 - this.year);
 
-    // Solution 1
-    // const self = this; // self or that
-    // const isMillenial = function () {
-    //   console.log(self);
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    //   // console.log(this.year >= 1981 && this.year <= 1996);
-    // };
+//     // Solution 1
+//     // const self = this; // self or that
+//     // const isMillenial = function () {
+//     //   console.log(self);
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     //   // console.log(this.year >= 1981 && this.year <= 1996);
+//     // };
 
-    // Solution 2
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-      // console.log(this.year >= 1981 && this.year <= 1996);
-    };
+//     // Solution 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//       // console.log(this.year >= 1981 && this.year <= 1996);
+//     };
 
-    isMillenial();
-  },
+//     isMillenial();
+//   },
 
-  greet: function () {
-    console.log(`Hey ${this.firstName}`);
-  },
+//   greet: function () {
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+
+// isaac.greet();
+// isaac.calcAge();
+
+// // Arguments keyword
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 5);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   a + b;
+// };
+
+// addArrow(2, 5, 8);
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Isaac',
+  age: 30,
 };
 
-isaac.greet();
-isaac.calcAge();
-
-// Arguments keyword
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 5);
-
-var addArrow = (a, b) => {
-  console.log(arguments);
-  a + b;
-};
-
-addArrow(2, 5, 8);
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me:', me);
